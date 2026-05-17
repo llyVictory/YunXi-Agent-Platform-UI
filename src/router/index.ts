@@ -88,6 +88,22 @@ export const constantRoutes: RouteRecordRaw[] = [
         meta: { title: '个人中心', icon: 'user' }
       }
     ]
+  },
+  {
+    path: '/yunxi',
+    component: Layout,
+    redirect: '/yunxi/slice1',
+    alwaysShow: true,
+    name: 'Yunxi',
+    meta: { title: '云犀 Agent', icon: 'monitor' },
+    children: [
+      {
+        path: 'slice1',
+        component: () => import('@/views/yunxi/slice1/index.vue'),
+        name: 'YunxiSliceOne',
+        meta: { title: 'Slice 1 验证', icon: 'component', noCache: true }
+      }
+    ]
   }
 ];
 
